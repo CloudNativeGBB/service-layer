@@ -112,7 +112,8 @@ function tryConnection(){
         useNewUrlParser: true,
         connectTimeoutMS: 5000,
         reconnectTries : 10, 
-        reconnectInterval : 3000 
+        reconnectInterval : 3000,
+        useUnifiedTopology: true,
       }
     );
   } else {
@@ -121,7 +122,8 @@ function tryConnection(){
       { useNewUrlParser: true,
         reconnectTries : 10,
         reconnectInterval : 3000, 
-        connectTimeoutMS: 5000
+        connectTimeoutMS: 5000,
+        useUnifiedTopology: true,
        }
     );
   }
