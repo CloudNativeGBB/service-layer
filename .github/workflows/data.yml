@@ -16,7 +16,6 @@ jobs:
       - name: Build Node.js App
         working-directory: ./data-api  
         run: npm ci
-        run: npm run build --if-present
       - name: Publish Docker Image
         uses: docker/build-push-action@v1
         with:
