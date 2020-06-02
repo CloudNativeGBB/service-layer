@@ -1,0 +1,29 @@
+# This workflow will run tests using node and then publish a package for the UI to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Package Service Tracker UI
+on: [push]
+
+jobs:
+  build-and-publish:
+    name: Build and Publish App
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Build Node.js App
+        working-directory: ./data-api  
+        run: npm ci
+        run: npm run build --if-present
+      - name: Publish Docker Image
+        uses: docker/build-push-action@v1
+        with:
+          path: ./data-api
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+          registry: docker.pkg.github.com
+          repository: cloudnativegbb/service-layer/service-layer-data-api
+          dockerfile: ./data-api/Dockerfile
+          tags: latest
