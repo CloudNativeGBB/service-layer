@@ -19,7 +19,7 @@ jobs:
       - name: Publish Docker Image
         uses: docker/build-push-action@v1
         with:
-          path: ./quakes-api
+          path: ./weather-api
           username: ${{ github.actor }}
           password: ${{ github.token }}
           registry: docker.pkg.github.com
