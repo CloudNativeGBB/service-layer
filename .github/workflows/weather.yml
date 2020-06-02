@@ -7,7 +7,7 @@ on: [push]
 jobs:
   build-and-publish:
     env:
-      IMAGE_NAME: weather-api
+      IMAGE_NAME: service-layer-weather-api
     name: Build and Publish App
     runs-on: ubuntu-latest
     steps:

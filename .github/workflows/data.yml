@@ -7,7 +7,7 @@ on: [push]
 jobs:
   build-and-publish:
     env:
-      IMAGE_NAME: data-api
+      IMAGE_NAME: service-layer-data-api
     name: Build and Publish API
     runs-on: ubuntu-latest
     steps:
