@@ -7,7 +7,7 @@ on: [push]
 jobs:
   build-and-publish:
     env:
-      IMAGE_NAME: flights-api
+      IMAGE_NAME: service-layer-flights-api
     name: Build and Publish App
     runs-on: ubuntu-latest
     steps:
@@ -23,6 +23,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ github.token }}
           registry: docker.pkg.github.com
-          repository: cloudnativegbb/arc-k8s-demos/${{ env.IMAGE_NAME }}
+          repository: cloudnativegbb/service-layer/${{ env.IMAGE_NAME }}
           dockerfile: ./flights-api/Dockerfile
           tag_with_ref: true
