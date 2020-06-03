@@ -1,7 +1,13 @@
 {
-  "name": "node-data-api",
-  "version": "0.0.5",
-  "private": true,
+  "name": "@cloudnativegbb/service-layer-data-api",
+  "version": "1.0.0",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CloudNativeGBB/service-layer.git"
+  },
   "scripts": {
     "local": "NODE_ENV=local node ./bin/www",
     "dev": "NODE_ENV=dev node ./bin/www",
