@@ -26,3 +26,4 @@ jobs:
           repository: cloudnativegbb/service-layer/${{ env.IMAGE_NAME }}
           dockerfile: ./weather-api/Dockerfile
           tag_with_ref: true
+          add_git_labels: true

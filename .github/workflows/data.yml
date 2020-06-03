@@ -26,3 +26,5 @@ jobs:
           repository: cloudnativegbb/service-layer/${{ env.IMAGE_NAME }}
           dockerfile: ./data-api/Dockerfile
           tag_with_ref: true
+          add_git_labels: true
+          
