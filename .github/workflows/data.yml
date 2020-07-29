@@ -15,7 +15,7 @@ on:
 jobs:
   build-and-publish:
     env:
-      IMAGE_NAME: service-layer-data-api
+      IMAGE_NAME: data-api
     name: Build and Publish API
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +30,7 @@ jobs:
           path: ./data-api
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: cloudnativegbb/service-layer/${{ env.IMAGE_NAME }}
+          repository: msftgbb/${{ env.IMAGE_NAME }}
           dockerfile: ./data-api/Dockerfile
           tag_with_ref: true
           add_git_labels: true
