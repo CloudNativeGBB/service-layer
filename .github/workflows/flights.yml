@@ -15,7 +15,7 @@ on:
 jobs:
   build-and-publish:
     env:
-      IMAGE_NAME: service-layer-flights-api
+      IMAGE_NAME: flights-api
     name: Build and Publish App
     runs-on: ubuntu-latest
     steps:
@@ -28,10 +28,9 @@ jobs:
         uses: docker/build-push-action@v1
         with:
           path: ./flights-api
-          username: ${{ github.actor }}
-          password: ${{ github.token }}
-          registry: docker.pkg.github.com
-          repository: cloudnativegbb/service-layer/${{ env.IMAGE_NAME }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: msftgbb/${{ env.IMAGE_NAME }}
           dockerfile: ./flights-api/Dockerfile
           tag_with_ref: true
           add_git_labels: true
