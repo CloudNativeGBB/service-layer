@@ -30,7 +30,6 @@ jobs:
           path: ./weather-api
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: docker.pkg.github.com
           repository: msftgbb/${{ env.IMAGE_NAME }}
           dockerfile: ./weather-api/Dockerfile
           tag_with_ref: true
