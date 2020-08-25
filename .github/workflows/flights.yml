@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - name: Build Node.js App
-        working-directory: ./data-api  
+        working-directory: ./quakes-api  
         run: npm ci  
       # build and push image to Docker Hub
       - name: Get current tag
