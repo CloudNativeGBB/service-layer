@@ -13,8 +13,8 @@ on:
       - master
 
 jobs:
-  build-and-publish:
-    name: Build and Publish App
+  create-tag:
+    name: Create new tag
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
