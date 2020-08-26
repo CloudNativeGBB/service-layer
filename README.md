@@ -1,2 +1,3 @@
 # service-layer
-Backing services for application in cluster
+
+Monorepo of backing services for Service Layer Application
