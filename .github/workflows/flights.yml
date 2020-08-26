@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
       - name: Build Node.js App
-        working-directory: ./flights-api  
+        working-directory: ./${{ env.IMAGE_NAME }}  
         run: npm ci  
       # build and push image to Docker Hub
       - uses: actions-ecosystem/action-get-latest-tag@v1
@@ -29,10 +29,10 @@ jobs:
         run: echo ${{ steps.get-latest-tag.outputs.tag }}
       - uses: docker/build-push-action@v1
         with:
-          path: ./flights-api
+          path: ./${{ env.IMAGE_NAME }}
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}  
           repository: msftgbb/${{ env.IMAGE_NAME }}
           tags: ${{ steps.get-latest-tag.outputs.tag }}
-          dockerfile: ./flights/Dockerfile
+          dockerfile: ./${{ env.IMAGE_NAME }}/Dockerfile
           add_git_labels: true
