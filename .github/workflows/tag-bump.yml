@@ -1,0 +1,33 @@
+# This workflow will run tests using node and then publish a package for the UI to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Bump Tag
+on:
+  # Trigger the workflow on push 
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  create-tag:
+    name: Create new tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # create a tag for deployment
+      - uses: actions/checkout@master
+        with:
+          # Fetches entire history, so we can analyze commits since last tag
+          fetch-depth: 0
+      - name: Bump version and push tag
+        uses: mathieudutour/github-tag-action@v4.5
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        id: bump_version
+      - name: Echo new tag version
+        run: echo ${{ steps.bump_version.outputs.new_tag }}
+        
