@@ -36,3 +36,10 @@ jobs:
           tags: ${{ steps.get-latest-tag.outputs.tag }}
           dockerfile: ./data-api/Dockerfile
           add_git_labels: true
+      - name: app-baseline Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: cloudnativegbb/app-baseline
+          event-type: version-event
+          client-payload: '{"image_name": "${{ env.IMAGE_NAME }}", "version": "${{ steps.bump_version.outputs.new_tag }}"}'
