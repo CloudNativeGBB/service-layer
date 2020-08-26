@@ -42,4 +42,4 @@ jobs:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: cloudnativegbb/app-baseline
           event-type: version-event
-          client-payload: '{"image_name": "${{ env.IMAGE_NAME }}", "version": "${{ steps.bump_version.outputs.new_tag }}"}'
+          client-payload: '{"image_name": "${{ env.IMAGE_NAME }}", "version": "${{ steps.get-latest-tag.outputs.tag }}"}'
