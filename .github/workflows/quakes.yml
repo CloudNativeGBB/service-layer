@@ -31,7 +31,6 @@ jobs:
         run: |
           echo $RELEASE_VERSION
           echo ${{ steps.vars.outputs.tag }}
-      - name: Publish Docker Image
       - uses: docker/build-push-action@v1
         with:
           path: ./quakes-api

@@ -33,7 +33,7 @@ jobs:
           echo ${{ steps.vars.outputs.tag }}
       - uses: docker/build-push-action@v1
         with:
-          path: ./data-api:
+          path: ./data-api
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}  
           repository: msftgbb/${{ env.IMAGE_NAME }}
