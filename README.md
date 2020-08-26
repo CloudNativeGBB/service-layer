@@ -1,6 +1,6 @@
 # service-layer
 
-Monorepo of backing services for Service Layer Application
+Monorepo of backing microservices for Service Layer Application
 
 * Flights
 * Quakes 
