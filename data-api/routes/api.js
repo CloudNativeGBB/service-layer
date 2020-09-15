@@ -3,13 +3,13 @@ const applicationInsights = require('applicationinsights');
 const async = require('async');
 const dayjs = require('dayjs');
 const express = require('express');
-const jsonResponse = require('../../data-api/models/express/jsonResponse');
+const jsonResponse = require('../models/express/jsonResponse');
 const mongoose = require('mongoose');
 const path = require('path');
 const relativeTime = require('dayjs/plugin/relativeTime');
 const router = express.Router();
-const st = require('../../data-api/models/util/status');
-const site = require('../../data-api/models/util/site');
+const st = require('../models/util/status');
+const site = require('../models/util/site');
 
 dayjs.extend(relativeTime);
 
